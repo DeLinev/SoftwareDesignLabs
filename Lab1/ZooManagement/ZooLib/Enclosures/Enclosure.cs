@@ -39,7 +39,7 @@ namespace ZooLib.Enclosures
 
         public bool CanBeAdded(IAnimal animal)
         {
-            if (Animals.Count <= Capacity && animal.PossibleHabitats.Contains(Type))
+            if (Animals.Count < Capacity && animal.PossibleHabitats.Contains(Type))
             {
                 return true;
             }
