@@ -33,7 +33,13 @@ class Program
         var animalInventory = new AnimalsInventory([lionEnclosure, elephantEnclosure, koalaEnclosure]);
         var employeeInventory = new EmployeesInventory([zookeeper, veterinarian, tourGuide]);
 
+        Console.WriteLine("Number of Enclosures: " + animalInventory.GetEnclosuresCount());
+        Console.WriteLine("Enclosures with Animals:");
         animalInventory.DisplayEnclosuresWithAnimals();
+        Console.WriteLine("Total Number of Animals: " + animalInventory.GetAnimalsCount());
+
+        Console.WriteLine("Number of Employees: " + employeeInventory.GetEmployeesCount());
+        Console.WriteLine("Employees:");
         employeeInventory.DisplayEmployees();
 
         Console.WriteLine("""

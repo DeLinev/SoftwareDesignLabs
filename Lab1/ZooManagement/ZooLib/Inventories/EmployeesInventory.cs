@@ -13,8 +13,6 @@ namespace ZooLib.Inventories
 
         public void DisplayEmployees()
         {
-            Console.WriteLine("Number of Employees: " + _employees.Count);
-            Console.WriteLine("Employees:");
             foreach (var employee in _employees)
             {
                 Console.WriteLine($"Name: {employee.Name}, Role: {employee.Role.GetType().Name}");
@@ -32,6 +30,11 @@ namespace ZooLib.Inventories
             {
                 employee.Work();
             }
+        }
+
+        public int GetEmployeesCount()
+        {
+            return _employees.Count;
         }
     }
 }

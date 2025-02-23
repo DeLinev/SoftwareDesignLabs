@@ -13,19 +13,14 @@ namespace ZooLib.Inventories
 
         public void DisplayEnclosuresWithAnimals()
         {
-            int animalCount = 0;
-            Console.WriteLine("Number of Enclosures: " + _enclosures.Count);
-            Console.WriteLine("Enclosures with Animals:");
             foreach (var enclosure in _enclosures)
             {
-                animalCount += enclosure.Animals.Count;
                 Console.WriteLine($"Enclosure Type: {enclosure.Type}, Size: {enclosure.Size}, Capacity: {enclosure.Capacity}");
                 foreach (var animal in enclosure.Animals)
                 {
                     Console.WriteLine($"  - Animal Name: {animal.Name}, Species: {animal.Species}, Subspecies: {animal.Subspecies}");
                 }
             }
-            Console.WriteLine("Total Number of Animals: " + animalCount);
         }
 
         public void AddEnclosure(Enclosure enclosure)
@@ -42,6 +37,21 @@ namespace ZooLib.Inventories
                     animal.PerformAction();
                 }
             }
+        }
+
+        public int GetEnclosuresCount()
+        {
+            return _enclosures.Count;
+        }
+
+        public int GetAnimalsCount()
+        {
+            int animalCount = 0;
+            foreach (var enclosure in _enclosures)
+            {
+                animalCount += enclosure.Animals.Count;
+            }
+            return animalCount;
         }
     }
 } 
