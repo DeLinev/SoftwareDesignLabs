@@ -1,0 +1,5 @@
+The C# language is the most popular language for the .NET platform, 
+a free, cross-platform, open source development environment. C# programs 
+can run on many different devices, from Internet of Things (IoT) devices 
+to the cloud and everywhere in between. You can write apps for phone, desktop, 
+and laptop computers and servers.

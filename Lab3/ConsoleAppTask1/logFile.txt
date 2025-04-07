@@ -1,0 +1,3 @@
+Log: Some informaiton to log.
+Warning: Important warning!
+Error: Oops... Something went wrong!
