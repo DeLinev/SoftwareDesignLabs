@@ -1,0 +1,2 @@
+[20/04/2025 16:20:08]: Event 'click' occurred in div element.
+[20/04/2025 16:20:08]: Element: <div class="container; main;"><h1 class="title;">Hello World!</h1></div>
