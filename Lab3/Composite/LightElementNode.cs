@@ -9,6 +9,7 @@ namespace Composite
         public bool IsSelfClosing { get; set; }
         public List<string> CssClasses { get; set; }
         public List<LightNode> Children { get; set; }
+        public Dictionary<string, string> Attributes { get; set; }
 
         public LightElementNode(string tagName, bool isBlock = true, bool isSelfClosing = false)
         {
@@ -17,6 +18,7 @@ namespace Composite
             IsSelfClosing = isSelfClosing;
             CssClasses = new List<string>();
             Children = new List<LightNode>();
+            Attributes = new Dictionary<string, string>();
         }
 
         public override int ChildElementsCount()
@@ -32,6 +34,19 @@ namespace Composite
             }
 
             return count;
+        }
+
+        public void SetAttribute(string name, string value)
+        {
+            Attributes[name] = value;
+        }
+
+        public void RemoveAttribute(string name)
+        {
+            if (Attributes.ContainsKey(name))
+            {
+                Attributes.Remove(name);
+            }
         }
 
         public void AddCssClass(params string[] cssClass)
@@ -71,6 +86,15 @@ namespace Composite
                 sb.Append(" class=\"");
                 sb.AppendJoin("; ", CssClasses);
                 sb.Append(";\"");
+            }
+
+            foreach (var attribute in Attributes)
+            {
+                sb.Append(" ");
+                sb.Append(attribute.Key);
+                sb.Append("=\"");
+                sb.Append(attribute.Value);
+                sb.Append("\"");
             }
 
             if (IsSelfClosing)
