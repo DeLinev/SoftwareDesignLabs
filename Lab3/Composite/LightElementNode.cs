@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Composite.Observer;
+using System.Text;
 
 namespace Composite
 {
@@ -9,6 +10,7 @@ namespace Composite
         public bool IsSelfClosing { get; set; }
         public List<string> CssClasses { get; set; }
         public List<LightNode> Children { get; set; }
+        public EventManager EventManager { get; set; }
 
         public LightElementNode(string tagName, bool isBlock = true, bool isSelfClosing = false)
         {
@@ -17,6 +19,7 @@ namespace Composite
             IsSelfClosing = isSelfClosing;
             CssClasses = new List<string>();
             Children = new List<LightNode>();
+            EventManager = new EventManager();
         }
 
         public override int ChildElementsCount()
@@ -87,6 +90,11 @@ namespace Composite
             }
 
             return sb.ToString();
+        }
+
+        public void TriggerEvent(string eventName)
+        {
+            EventManager.Notify(eventName, this);
         }
     }
 }
