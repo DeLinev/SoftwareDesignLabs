@@ -4,9 +4,10 @@
     {
         private IHandler? _nextHandler;
         
-        public void SetNext(IHandler handler)
+        public IHandler SetNext(IHandler handler)
         {
             _nextHandler = handler;
+            return handler;
         }
 
         public abstract void Handle();

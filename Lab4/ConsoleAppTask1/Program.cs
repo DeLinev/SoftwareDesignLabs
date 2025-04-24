@@ -8,10 +8,13 @@ class Program
         var paymentHandler = new PaymentSupportHandler();
         var securityHandler = new SecuritySupportHandler();
         var technicalHandler = new TechnicalSupportHandler();
-        accountHandler.SetNext(paymentHandler);
-        paymentHandler.SetNext(securityHandler);
-        securityHandler.SetNext(technicalHandler);
-        technicalHandler.SetNext(accountHandler);
+
+        accountHandler
+            .SetNext(paymentHandler)
+            .SetNext(securityHandler)
+            .SetNext(technicalHandler)
+            .SetNext(accountHandler);
+        
 
         Console.WriteLine("Welcome to the support system!");
         accountHandler.Handle();

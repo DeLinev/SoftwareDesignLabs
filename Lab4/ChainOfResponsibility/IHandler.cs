@@ -2,7 +2,7 @@
 {
     public interface IHandler
     {
-        void SetNext(IHandler handler);
+        IHandler SetNext(IHandler handler);
         void Handle();
     }
 }
