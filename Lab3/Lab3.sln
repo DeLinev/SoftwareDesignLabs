@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flyweight", "Flyweight\Flyw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTask6", "ConsoleAppTask6\ConsoleAppTask6.csproj", "{F96ADDA3-959A-4851-A8F1-AEC965B65AC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppMKRIterator", "ConsoleAppMKRIterator\ConsoleAppMKRIterator.csproj", "{C8057AB2-CB40-412D-A961-516737186249}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,8 +83,15 @@ Global
 		{F96ADDA3-959A-4851-A8F1-AEC965B65AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F96ADDA3-959A-4851-A8F1-AEC965B65AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F96ADDA3-959A-4851-A8F1-AEC965B65AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8057AB2-CB40-412D-A961-516737186249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8057AB2-CB40-412D-A961-516737186249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8057AB2-CB40-412D-A961-516737186249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8057AB2-CB40-412D-A961-516737186249}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E489424D-CDF1-498E-80E3-261F97A9188D}
 	EndGlobalSection
 EndGlobal

@@ -1,8 +1,9 @@
-﻿using System.Text;
+﻿using Composite.Iterator;
+using System.Text;
 
 namespace Composite
 {
-    public class LightElementNode : LightNode
+    public class LightElementNode : LightNode, ITree
     {
         public string TagName { get; set; }
         public bool IsBlock { get; set; }
@@ -50,6 +51,11 @@ namespace Composite
             Children.Add(child);
         }
 
+        public void RemoveChild(LightNode child)
+        {
+            Children.Remove(child);
+        }
+
         public override string InnerHtml()
         {
             StringBuilder sb = new StringBuilder();
@@ -63,16 +69,24 @@ namespace Composite
         public override string OuterHtml()
         {
             StringBuilder sb = new StringBuilder();
+            sb.Append(OpeningTag());
+            sb.Append(InnerHtml());
+            sb.Append(ClosingTag());
+
+            return sb.ToString();
+        }
+
+        protected string OpeningTag()
+        {
+            StringBuilder sb = new StringBuilder();
             sb.Append("<");
             sb.Append(TagName);
-
             if (CssClasses.Count > 0)
             {
                 sb.Append(" class=\"");
                 sb.AppendJoin("; ", CssClasses);
                 sb.Append(";\"");
             }
-
             if (IsSelfClosing)
             {
                 sb.Append(" />");
@@ -80,13 +94,30 @@ namespace Composite
             else
             {
                 sb.Append(">");
-                sb.Append(InnerHtml());
+            }
+            return sb.ToString();
+        }
+
+        protected string ClosingTag()
+        {
+            StringBuilder sb = new StringBuilder();
+            if (!IsSelfClosing)
+            {
                 sb.Append("</");
                 sb.Append(TagName);
                 sb.Append(">");
             }
-
             return sb.ToString();
+        }
+
+        public ITreeIterator CreateDeepthIterator()
+        {
+            return new DepthIterator(this);
+        }
+
+        public ITreeIterator CreateBreadthIterator()
+        {
+            return new BreadthIterator(this);
         }
     }
 }
