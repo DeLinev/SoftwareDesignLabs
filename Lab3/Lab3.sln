@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppMKRCommand", "Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppMKRState", "ConsoleAppMKRState\ConsoleAppMKRState.csproj", "{63B14B46-3083-46E6-B07A-93C3DA1C1FD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppMKRTemplateMethod", "ConsoleAppMKRTemplateMethod\ConsoleAppMKRTemplateMethod.csproj", "{D525232F-8D0D-4DCB-A4EA-6E4BC6D13818}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{63B14B46-3083-46E6-B07A-93C3DA1C1FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63B14B46-3083-46E6-B07A-93C3DA1C1FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63B14B46-3083-46E6-B07A-93C3DA1C1FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D525232F-8D0D-4DCB-A4EA-6E4BC6D13818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D525232F-8D0D-4DCB-A4EA-6E4BC6D13818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D525232F-8D0D-4DCB-A4EA-6E4BC6D13818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D525232F-8D0D-4DCB-A4EA-6E4BC6D13818}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
