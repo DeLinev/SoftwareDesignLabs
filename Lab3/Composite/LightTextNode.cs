@@ -1,4 +1,6 @@
-﻿namespace Composite
+﻿using Composite.Visitor;
+
+namespace Composite
 {
     public class LightTextNode : LightNode
     {
@@ -49,5 +51,9 @@
             Text = Text.Replace("<", "&lt;").Replace(">", "&gt;");
         }
 
+        public override void Accept(INodeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }

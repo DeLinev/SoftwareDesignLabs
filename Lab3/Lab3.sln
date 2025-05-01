@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppMKRState", "Conso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppMKRTemplateMethod", "ConsoleAppMKRTemplateMethod\ConsoleAppMKRTemplateMethod.csproj", "{D525232F-8D0D-4DCB-A4EA-6E4BC6D13818}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppMKRVisitor", "ConsoleAppMKRVisitor\ConsoleAppMKRVisitor.csproj", "{DAE9C793-BD91-4C25-AD3B-AB48C5E14FA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{D525232F-8D0D-4DCB-A4EA-6E4BC6D13818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D525232F-8D0D-4DCB-A4EA-6E4BC6D13818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D525232F-8D0D-4DCB-A4EA-6E4BC6D13818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE9C793-BD91-4C25-AD3B-AB48C5E14FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE9C793-BD91-4C25-AD3B-AB48C5E14FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE9C793-BD91-4C25-AD3B-AB48C5E14FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE9C793-BD91-4C25-AD3B-AB48C5E14FA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
