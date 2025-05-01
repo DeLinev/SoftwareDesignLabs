@@ -94,6 +94,26 @@ namespace Composite
             return sb.ToString();
         }
 
+        public override string RenderInnerHtml()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (LightNode child in Children)
+            {
+                sb.Append(child.Render());
+            }
+            return sb.ToString();
+        }
+
+        public override string RenderOuterHtml()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(OpeningTag());
+            sb.Append(RenderInnerHtml());
+            sb.Append(ClosingTag());
+
+            return sb.ToString();
+        }
+
         public void Click()
         {
             state.Click();
@@ -141,6 +161,21 @@ namespace Composite
         public ITreeIterator CreateBreadthIterator()
         {
             return new BreadthIterator(this);
+        }
+
+        protected override void OnCreated()
+        {
+            Console.WriteLine($"Created light element node {TagName}");
+        }
+
+        protected override void OnRendered()
+        {
+            Console.WriteLine($"Rendered: <{TagName}/>");
+        }
+
+        protected override void OnClassListApplied()
+        {
+            Console.WriteLine($"Following classes were applied to the {TagName} element: {string.Join(", ", CssClasses)}");
         }
     }
 }
