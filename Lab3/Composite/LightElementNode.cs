@@ -43,6 +43,14 @@ namespace Composite
             }
         }
 
+        public void RemoveCssClass(params string[] cssClass)
+        {
+            foreach (var css in cssClass)
+            {
+                CssClasses.Remove(css);
+            }
+        }
+
         public void AddChild(LightNode child)
         {
             if (IsSelfClosing)
