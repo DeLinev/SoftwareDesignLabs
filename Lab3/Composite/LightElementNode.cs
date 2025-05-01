@@ -1,4 +1,5 @@
 ﻿using Composite.Iterator;
+using Composite.State;
 using System.Text;
 
 namespace Composite
@@ -11,6 +12,8 @@ namespace Composite
         public List<string> CssClasses { get; set; }
         public List<LightNode> Children { get; set; }
 
+        private ElementState state;
+
         public LightElementNode(string tagName, bool isBlock = true, bool isSelfClosing = false)
         {
             TagName = tagName;
@@ -18,6 +21,12 @@ namespace Composite
             IsSelfClosing = isSelfClosing;
             CssClasses = new List<string>();
             Children = new List<LightNode>();
+            state = new ActiveState(this);
+        }
+
+        public void SetState(ElementState newState)
+        {
+            state = newState;
         }
 
         public override int ChildElementsCount()
@@ -39,7 +48,8 @@ namespace Composite
         {
             foreach (var css in cssClass)
             {
-                CssClasses.Add(css);
+                if (!CssClasses.Contains(css))
+                    CssClasses.Add(css);
             }
         }
 
@@ -82,6 +92,11 @@ namespace Composite
             sb.Append(ClosingTag());
 
             return sb.ToString();
+        }
+
+        public void Click()
+        {
+            state.Click();
         }
 
         protected string OpeningTag()
