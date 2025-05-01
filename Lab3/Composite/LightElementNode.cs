@@ -1,5 +1,7 @@
 ﻿using Composite.Iterator;
 using Composite.State;
+using Composite.Visitor;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace Composite
@@ -176,6 +178,16 @@ namespace Composite
         protected override void OnClassListApplied()
         {
             Console.WriteLine($"Following classes were applied to the {TagName} element: {string.Join(", ", CssClasses)}");
+        }
+
+        public override void Accept(INodeVisitor visitor)
+        {
+            visitor.Visit(this);
+
+            foreach (var child in Children)
+            {
+                child.Accept(visitor);
+            }
         }
     }
 }
